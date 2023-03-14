@@ -10,12 +10,13 @@ public class SelectionSort implements Sorter{
             int key = i;
             for (int j = i+1; j < elements.length; j++) {
                 if(key>elements[j]){
-                    int save = key;
                     key = elements[j];
-                    elements[j] = save;
                 }
-            }
             
+            }
+            int save = key;
+            key = elements[i];
+            elements[i] = save;
         }
         int [] sorted = elements.clone();
         return sorted;
